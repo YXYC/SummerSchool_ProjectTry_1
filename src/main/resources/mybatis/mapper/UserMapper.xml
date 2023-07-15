@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.summerschool_projecttry_1.mapper.UserMapper">
+    <select id="getAllUser" resultType="User">
+            select * from user;
+    </select>
+
+    <select id="getUser" resultType="User">
+           SELECT * FROM user WHERE username = #{name} AND password = #{password};
+    </select>
+
+    <insert id="addUser">
+        insert into user(username,password,name) values ( #{id}, #{password}, #{name});
+    </insert>
+
+
+</mapper>
